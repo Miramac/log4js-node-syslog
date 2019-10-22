@@ -1,0 +1,29 @@
+{
+  "name": "log4js-node-syslog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Miramac/log4js-node-syslog.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Miramac/log4js-node-syslog/issues"
+  },
+  "homepage": "https://github.com/Miramac/log4js-node-syslog#readme",
+  "dependencies": {
+    "syslog-pro": "^1.0.0"
+  },
+  "devDependencies": {
+    "log4js": "^5.2.2"
+  }
+}
