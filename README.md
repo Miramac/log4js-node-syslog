@@ -2,6 +2,8 @@
 
 Syslog appender for [log4js-node](https://github.com/log4js-node/log4js-node). Syslog messages are send with [syslog-pro](https://github.com/cyamato/SyslogPro).
 
+Only RFC3164 and RFC5424 formate are suporteed at the moment.
+
 ## Installation 
 ````
 npm install log4js-node-syslog-pro --save
@@ -10,11 +12,6 @@ npm install log4js-node-syslog-pro --save
 ## Usage
 ````javascript
 const log4js = require('log4js')
-
-const testConfig = {
-  address: 'localhost',
-  port: 10001
-}
 
 log4js.configure({
   appenders: {
@@ -37,6 +34,16 @@ const logger = log4js.getLogger()
 logger.info('My log message!')
 // --> 2019-10-23 14:56:41 Local7.Debug my-hostname Oct 23 02:56:41 my-hostname My-App [DEBUG] default - My log message! 
 ````
+
+## Mapping log level to syslog severity
+| Log Level |   Syslog Severity |
+| --- | --- |
+| trace | debug |
+| debug | debug |
+| info | info |
+| warning | warning |
+| error | error |
+| fatal | critical |
 
 ## Facilities 
 
