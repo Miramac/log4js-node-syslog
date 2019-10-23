@@ -1,5 +1,42 @@
 # log4js-node-syslog
 
+Syslog appender for log4js-node (https://github.com/log4js-node/log4js-node). Syslog messages are send with the SyslogPro module (https://github.com/cyamato/SyslogPro)
+
+## Installation 
+````
+npm install log4js-node-syslog --save`
+````
+
+## Usage
+````javascript
+const log4js = require('log4js')
+
+const testConfig = {
+  address: 'localhost',
+  port: 10001
+}
+
+log4js.configure({
+  appenders: {
+    syslog: {
+      type: 'log4js-node-syslog',
+      // SyslogPro options: https://cyamato.github.io/SyslogPro/module-SyslogPro-RFC3164.html
+      server: {
+        target: 'localhost'
+      },
+      applacationName: 'My-App',
+      facility: 23,
+      format: 'rfc3164'
+    }
+  },
+  categories: { default: { appenders: ['syslog'], level: 'debug' } }
+})
+const logger = log4js.getLogger()
+
+logger.info('My log message!')
+// --> 2019-10-23 14:56:41 Local7.Debug my-hostname Oct 23 02:56:41 my-hostname My-App [DEBUG] default - My log message! 
+````
+
 ## Facilities 
 
 | Facility Number| Facility Description |

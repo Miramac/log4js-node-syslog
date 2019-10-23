@@ -1,5 +1,3 @@
 'use strict'
 
-module.exports = {
-  rfc3164: require('./lib/rfc3164')
-}
+module.exports = require('./lib/syslogAppender')
