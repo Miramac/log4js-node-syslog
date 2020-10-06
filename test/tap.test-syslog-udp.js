@@ -12,7 +12,6 @@ log4js.configure({
     syslog: {
       type: '..',
       server: {
-        // target: 'app11-muc.int.vocatus-ag.de'
         target: testConfig.address,
         port: testConfig.port
       },
